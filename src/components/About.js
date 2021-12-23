@@ -35,7 +35,7 @@ export default function About(props) {
     return (
         <>
             {/* <Navbar title="TextUtils" mode={mode} toggleMode={toggleMode} /> */}
-            <div className="container" style={myStyle}>
+            <div className="container" style={{color: props.mode === 'dark'?'white':'#042743'}}>
                 <h1>About us</h1>
                 <div className="accordion" id="accordionExample">
                     <div className="accordion-item" style={myStyle}>
