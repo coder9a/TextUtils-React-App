@@ -3,6 +3,10 @@ import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
 export default function Navbar(props) {
+  const capitalize = (word) => {
+    var lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1)
+}
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
       <div className="container-fluid">
@@ -21,7 +25,7 @@ export default function Navbar(props) {
           </ul>
           <div className={`form-check form-switch text-${props.mode === 'light'?'dark':'light'}`}>
             <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
-            <label className="form-check-label"  htmlFor="flexSwitchCheckDefault">Enable DarkMode </label>
+            <label className="form-check-label"  htmlFor="flexSwitchCheckDefault">Enable {capitalize(props.mode === 'light'?'dark':'light')}Mode </label>
           </div>
         </div>
       </div>
